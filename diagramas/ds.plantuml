@@ -1,0 +1,18 @@
+@startuml
+
+title testBuscoUnalumnoNoInscriptoYNoLoEncuentro\n
+
+/'
+ ' create ":Materia"
+ '/
+":TestCase" -> ":Materia": cupo(3)
+return
+":TestCase" -> "a:Alumno": padron(5000)
+return
+":TestCase" -> ":Materia": inscribir(a)
+":TestCase" -> ":Materia": alumnoPorPadron(7000)
+create ":NoExisteAlumno"
+":Materia" -> ":NoExisteAlumno": signal 
+return
+
+@enduml

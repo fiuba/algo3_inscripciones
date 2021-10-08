@@ -1,0 +1,27 @@
+@startuml
+
+class Alumno {
+        - padron
+
+        + padron(unPadron)
+        + sos(unPadron) : boolean
+}
+
+class VerificacionCupo {
+        - cota
+        
+        + valor(cota)
+        + ejecutar(valor)
+}
+
+class Materia {
+        - cupo
+        
+        + inscribir( a : Alumno)
+        + alumnoPorPadron( p : Padron)
+}
+
+Materia o- "0..*" Alumno
+
+Materia ..> VerificacionCupo: "<<instanciate>>"
+@enduml
